@@ -25,6 +25,8 @@ stats: context [
 random/seed now/time/precise
 
 ; function definitions
+ln: :log-e	; alias natural log for convenience
+
 standard-uniform: function [
 	"Returns a pseudorandom float from standard uniform distribution"
 ][
@@ -35,9 +37,9 @@ box-muller: function [
 	{Returns a set of two independent pseudorandom floats
 	from the standard normal distribution}
 ][
-	theta: 2 * pi * standard-uniform					; uniformly random angle
-	r: square-root -2 * (log-e 1 - standard-uniform)	; exponentially random radius
-	reduce [											; compute and return set
+	theta: 2 * pi * standard-uniform				; uniformly random angle
+	r: square-root -2 * (ln 1 - standard-uniform)	; exponentially random radius
+	reduce [										; compute and return set
 		r * cosine/radians theta
 		r * sine/radians theta
 	]
