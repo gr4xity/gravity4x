@@ -122,13 +122,9 @@ view/tight/flags compose [
 		]
 		canvas/(pixel): green				; poke pixel
 
-		; update histogram for x
-		hist: pick graph/draw/hist-x pixel/x
-		hist/3/y: 1 + hist/3/y
-
-		; update histogram for y
-		hist: pick graph/draw/hist-y pixel/y
-		hist/3/x: 1 + hist/3/x
+		; update histograms
+		graph/draw/hist-x/(pixel/x)/3/y: 1 + graph/draw/hist-x/(pixel/x)/3/y
+		graph/draw/hist-y/(pixel/y)/3/x: 1 + graph/draw/hist-y/(pixel/y)/3/x
 
 		; estimate and update linear sample statistics: sum and mean
 		stats/x: stats/x + point/1
