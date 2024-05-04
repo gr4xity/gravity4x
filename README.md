@@ -7,7 +7,7 @@ This repository contains example code from the dev blog:
 https://www.gravity4x.com/blog/
 
 ## Unit Circle
-An animated illustration of a unit circle using gr4Xity-style vector graphics.
+An animated illustration of a unit circle using *gr4Xity*-style vector graphics.
 ![Unit Circle](https://www.gravity4x.com/wp-content/uploads/circle.gif)
 
 ## Box-Muller
